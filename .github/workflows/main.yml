@@ -9,11 +9,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    #- name: git setting
-    #  run : git clone git@github.com:egoingsb/action-test.git .
-    - name: Run pwd
-      run: pwd
-    - name: Run ls -al
-      run: ls -al
-    - name: Run git log
-      run: git --no-pager log
+    - name: 업무일지 대신 작성해주기 
+      id: worklog
+      uses: opentutorials-org/action-airtable-worklog@v1.0.6
+      with:
+        AIRTABLE_SECRET: ${{ secrets.AIRTABLE_SECRET }} 
+        AIRTABLE_BASE: ${{ secrets.AIRTABLE_BASE }} 
+
