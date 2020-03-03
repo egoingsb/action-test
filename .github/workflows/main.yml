@@ -9,6 +9,8 @@ jobs:
 
     steps:
     #- uses: actions/checkout@v2
+    - name: git setting
+      run : git clone git@github.com:egoingsb/action-test.git .
     - name: Run pwd
       run: pwd
     - name: Run ls -al
